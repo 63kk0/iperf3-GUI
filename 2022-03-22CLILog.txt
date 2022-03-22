@@ -1,0 +1,325 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI> dir
+
+
+    Directory: C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI
+
+
+----                 -------------         ------ ----
+da---l         3/22/2022  11:39 AM                Comparison With Speedtest.net
+-a---l         3/22/2022  11:39 AM             14 .gitignore
+-a---l         3/22/2022  11:39 AM          38951 iperf.py
+-a---l         3/22/2022  11:39 AM           6236 README.md
+-a---l         3/22/2022  11:39 AM          99898 Screenshot 2018-04-30 14.48.08.png
+-a---l         3/22/2022  11:39 AM         119304 Screenshot 2018-04-30 15.27.12.png
+
+PS C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI> .\iperf.py
+Traceback (most recent call last):
+  File "C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI\iperf.py", line 19, in <module>
+    import ConfigParser
+PS C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI> .\iperf.py -I C:\Apps\iperf\iperf3.exe
+Traceback (most recent call last):
+  File "C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI\iperf.py", line 19, in <module>
+    import ConfigParser
+PS C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI> python .\iperf.py -I C:\Apps\iperf\iperf3.exe
+Traceback (most recent call last):
+  File ".\iperf.py", line 19, in <module>
+    import ConfigParser
+PS C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI> python .\iperf.py -I C:\Apps\iperf\iperf3.exe
+Traceback (most recent call last):
+  File ".\iperf.py", line 19, in <module>
+    import ConfigParser
+PS C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI> python .\iperf.py -I C:\Apps\iperf\iperf3.exe
+Traceback (most recent call last):
+  File ".\iperf.py", line 22, in <module>
+    import urllib2
+PS C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI> python .\iperf.py -I C:\Apps\iperf\iperf3.exe
+Traceback (most recent call last):
+  File ".\iperf.py", line 23, in <module>
+    import Tkinter as tk
+ModuleNotFoundError: No module named 'Tkinter'
+PS C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI> python .\iperf.py -I C:\Apps\iperf\iperf3.exe
+  File ".\iperf.py", line 24, in <module>
+    import ttk
+ModuleNotFoundError: No module named 'ttk'
+PS C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI> python .\iperf.py -I C:\Apps\iperf\iperf3.exe
+Traceback (most recent call last):
+  File ".\iperf.py", line 25, in <module>
+  File "C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI\meter.py", line 1, in <module>
+    import Tkinter as tk
+ModuleNotFoundError: No module named 'Tkinter'
+PS C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI> python .\iperf.py -I C:\Apps\iperf\iperf3.exe
+Traceback (most recent call last):
+  File ".\iperf.py", line 25, in <module>
+    import meter as m
+  File "C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI\meter.py", line 2, in <module>
+    import tkFont as tkf
+ModuleNotFoundError: No module named 'tkFont'
+PS C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI> python .\iperf.py -I C:\Apps\iperf\iperf3.exe
+Traceback (most recent call last):
+  File ".\iperf.py", line 319, in get_local_ip
+    req = urllib2.urlopen(url)
+NameError: name 'urllib2' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+    main()
+  File ".\iperf.py", line 804, in main
+    App(arg).mainloop()
+  File ".\iperf.py", line 773, in __init__
+    Mainframe(self, arg=arg).grid()
+  File ".\iperf.py", line 63, in __init__
+    self.local_ip = self.get_local_ip() #get local external ip if we can
+  File ".\iperf.py", line 323, in get_local_ip
+    except urllib2.URLError as e:
+NameError: name 'urllib2' is not defined
+PS C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI> python .\iperf.py -I C:\Apps\iperf\iperf3.exe
+Traceback (most recent call last):
+  File ".\iperf.py", line 319, in get_local_ip
+    req = urllib.urlopen(url)
+AttributeError: module 'urllib' has no attribute 'urlopen'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+    main()
+  File ".\iperf.py", line 804, in main
+    App(arg).mainloop()
+  File ".\iperf.py", line 773, in __init__
+    Mainframe(self, arg=arg).grid()
+  File ".\iperf.py", line 63, in __init__
+    self.local_ip = self.get_local_ip() #get local external ip if we can
+  File ".\iperf.py", line 323, in get_local_ip
+    except urllib.URLError as e:
+AttributeError: module 'urllib' has no attribute 'URLError'
+PS C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI> python .\iperf.py -I C:\Apps\iperf\iperf3.exe
+Traceback (most recent call last):
+  File ".\iperf.py", line 319, in get_local_ip
+    req = urllib.urlopen(url)
+AttributeError: module 'urllib' has no attribute 'urlopen'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+    main()
+  File ".\iperf.py", line 804, in main
+    App(arg).mainloop()
+  File ".\iperf.py", line 773, in __init__
+    Mainframe(self, arg=arg).grid()
+  File ".\iperf.py", line 63, in __init__
+    self.local_ip = self.get_local_ip() #get local external ip if we can
+  File ".\iperf.py", line 323, in get_local_ip
+    except urllib.URLError as e:
+AttributeError: module 'urllib' has no attribute 'URLError'
+PS C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI> python .\iperf.py -I C:\Apps\iperf\iperf3.exe
+Traceback (most recent call last):
+  File ".\iperf.py", line 319, in get_local_ip
+    req = urllib.urlopen(url)
+AttributeError: module 'urllib' has no attribute 'urlopen'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+    main()
+  File ".\iperf.py", line 804, in main
+    App(arg).mainloop()
+  File ".\iperf.py", line 773, in __init__
+    Mainframe(self, arg=arg).grid()
+  File ".\iperf.py", line 63, in __init__
+    self.local_ip = self.get_local_ip() #get local external ip if we can
+  File ".\iperf.py", line 323, in get_local_ip
+    except urllib.URLError as e:
+AttributeError: module 'urllib' has no attribute 'URLError'
+PS C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI> python .\iperf.py -I C:\Apps\iperf\iperf3.exe
+Traceback (most recent call last):
+  File ".\iperf.py", line 319, in get_local_ip
+    req = urllib.urlopen(url)
+AttributeError: module 'urllib' has no attribute 'urlopen'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+    main()
+  File ".\iperf.py", line 804, in main
+    App(arg).mainloop()
+  File ".\iperf.py", line 773, in __init__
+    Mainframe(self, arg=arg).grid()
+  File ".\iperf.py", line 63, in __init__
+    self.local_ip = self.get_local_ip() #get local external ip if we can
+  File ".\iperf.py", line 323, in get_local_ip
+    except urllib.URLError as e:
+AttributeError: module 'urllib' has no attribute 'URLError'
+PS C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI> python .\iperf.py -I C:\Apps\iperf\iperf3.exe
+Traceback (most recent call last):
+  File ".\iperf.py", line 319, in get_local_ip
+    req = urllib.urlopen(url)
+AttributeError: module 'urllib' has no attribute 'urlopen'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+    main()
+  File ".\iperf.py", line 804, in main
+    App(arg).mainloop()
+  File ".\iperf.py", line 773, in __init__
+    Mainframe(self, arg=arg).grid()
+  File ".\iperf.py", line 63, in __init__
+    self.local_ip = self.get_local_ip() #get local external ip if we can
+  File ".\iperf.py", line 323, in get_local_ip
+    except urllib.urlerror as e:
+AttributeError: module 'urllib' has no attribute 'urlerror'
+PS C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI> python .\iperf.py -I C:\Apps\iperf\iperf3.exe
+Traceback (most recent call last):
+  File ".\iperf.py", line 319, in get_local_ip
+    req = urllib.urlopen(url)
+AttributeError: module 'urllib' has no attribute 'urlopen'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+    main()
+  File ".\iperf.py", line 804, in main
+    App(arg).mainloop()
+  File ".\iperf.py", line 773, in __init__
+    Mainframe(self, arg=arg).grid()
+  File ".\iperf.py", line 63, in __init__
+    self.local_ip = self.get_local_ip() #get local external ip if we can
+  File ".\iperf.py", line 323, in get_local_ip
+    except urllib.urlerror as e:
+AttributeError: module 'urllib' has no attribute 'urlerror'
+PS C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI> python .\iperf.py -I C:\Apps\iperf\iperf3.exe
+Traceback (most recent call last):
+  File ".\iperf.py", line 319, in get_local_ip
+    req = urllib.urlopen(url)
+AttributeError: module 'urllib' has no attribute 'urlopen'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+    main()
+  File ".\iperf.py", line 804, in main
+    App(arg).mainloop()
+  File ".\iperf.py", line 773, in __init__
+    Mainframe(self, arg=arg).grid()
+  File ".\iperf.py", line 63, in __init__
+    self.local_ip = self.get_local_ip() #get local external ip if we can
+  File ".\iperf.py", line 323, in get_local_ip
+    except urllib.error.URLError as e:
+AttributeError: module 'urllib' has no attribute 'error'
+PS C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI> python .\iperf.py -I C:\Apps\iperf\iperf3.exe
+Traceback (most recent call last):
+    main()
+  File ".\iperf.py", line 805, in main
+    App(arg).mainloop()
+  File ".\iperf.py", line 774, in __init__
+    Mainframe(self, arg=arg).grid()
+  File ".\iperf.py", line 64, in __init__
+    self.local_ip = self.get_local_ip() #get local external ip if we can
+  File ".\iperf.py", line 320, in get_local_ip
+    req = urllib.urlopen(url)
+AttributeError: module 'urllib' has no attribute 'urlopen'
+PS C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI> python .\iperf.py -I C:\Apps\iperf\iperf3.exe
+Traceback (most recent call last):
+    main()
+  File ".\iperf.py", line 806, in main
+    App(arg).mainloop()
+  File ".\iperf.py", line 775, in __init__
+    Mainframe(self, arg=arg).grid()
+  File ".\iperf.py", line 65, in __init__
+    self.local_ip = self.get_local_ip() #get local external ip if we can
+  File ".\iperf.py", line 321, in get_local_ip
+    req = urllib.urlopen(url)
+AttributeError: module 'urllib' has no attribute 'urlopen'
+PS C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI> python .\iperf.py -I C:\Apps\iperf\iperf3.exe
+Traceback (most recent call last):
+  File ".\iperf.py", line 810, in <module>
+    main()
+    App(arg).mainloop()
+  File ".\iperf.py", line 775, in __init__
+    Mainframe(self, arg=arg).grid()
+  File ".\iperf.py", line 65, in __init__
+    self.local_ip = self.get_local_ip() #get local external ip if we can
+  File ".\iperf.py", line 322, in get_local_ip
+    grab = re.findall('([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)', req.read())
+  File "C:\Program Files\Python37\lib\re.py", line 225, in findall
+    return _compile(pattern, flags).findall(string)
+TypeError: cannot use a string pattern on a bytes-like object
+PS C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI> python .\iperf.py -I C:\Apps\iperf\iperf3.exe
+Traceback (most recent call last):
+    main()
+  File ".\iperf.py", line 806, in main
+    App(arg).mainloop()
+  File ".\iperf.py", line 775, in __init__
+    Mainframe(self, arg=arg).grid()
+  File ".\iperf.py", line 65, in __init__
+    self.local_ip = self.get_local_ip() #get local external ip if we can
+  File ".\iperf.py", line 322, in get_local_ip
+    grab = re.findall('([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)', req.read().decode(resource.headers.get_content_charset()))
+NameError: name 'resource' is not defined
+PS C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI> python .\iperf.py -I C:\Apps\iperf\iperf3.exe
+Traceback (most recent call last):
+    main()
+  File ".\iperf.py", line 806, in main
+    App(arg).mainloop()
+  File ".\iperf.py", line 775, in __init__
+    Mainframe(self, arg=arg).grid()
+  File ".\iperf.py", line 65, in __init__
+    self.local_ip = self.get_local_ip() #get local external ip if we can
+  File ".\iperf.py", line 322, in get_local_ip
+    grab = re.findall('([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)', req.read().decode(req.headers.get_content_charset()))
+TypeError: decode() argument 1 must be str, not None
+PS C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI> python .\iperf.py -I C:\Apps\iperf\iperf3.exe
+Traceback (most recent call last):
+    main()
+  File ".\iperf.py", line 807, in main
+    App(arg).mainloop()
+  File ".\iperf.py", line 776, in __init__
+    Mainframe(self, arg=arg).grid()
+  File ".\iperf.py", line 65, in __init__
+    self.local_ip = self.get_local_ip() #get local external ip if we can
+  File ".\iperf.py", line 322, in get_local_ip
+    content =  req.read().decode(req.headers.get_content_charset())
+TypeError: decode() argument 1 must be str, not None
+PS C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI> python .\iperf.py -I C:\Apps\iperf\iperf3.exe
+Traceback (most recent call last):
+    main()
+  File ".\iperf.py", line 806, in main
+    App(arg).mainloop()
+  File ".\iperf.py", line 775, in __init__
+    Mainframe(self, arg=arg).grid()
+  File ".\iperf.py", line 65, in __init__
+    self.local_ip = self.get_local_ip() #get local external ip if we can
+  File ".\iperf.py", line 322, in get_local_ip
+    grab = re.findall('([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)', req.read().decode(req.headers.get_content_charset()))
+TypeError: decode() argument 1 must be str, not None
+PS C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI> python .\iperf.py -I C:\Apps\iperf\iperf3.exe
+Traceback (most recent call last):
+    main()
+  File ".\iperf.py", line 806, in main
+    App(arg).mainloop()
+  File ".\iperf.py", line 775, in __init__
+    Mainframe(self, arg=arg).grid()
+  File ".\iperf.py", line 105, in __init__
+    self.read_config_file() #load data if config file exists
+  File ".\iperf.py", line 296, in read_config_file
+    Config = ConfigParser.ConfigParser()
+NameError: name 'ConfigParser' is not defined
+PS C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI> python .\iperf.py -I C:\Apps\iperf\iperf3.exe
+Traceback (most recent call last):
+    main()
+  File ".\iperf.py", line 806, in main
+    App(arg).mainloop()
+  File ".\iperf.py", line 775, in __init__
+    Mainframe(self, arg=arg).grid()
+  File ".\iperf.py", line 105, in __init__
+    self.read_config_file() #load data if config file exists
+  File ".\iperf.py", line 296, in read_config_file
+    Config = configparser.configparser()
+AttributeError: module 'configparser' has no attribute 'configparser'
+PS C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI> python .\iperf.py -I C:\Apps\iperf\iperf3.exe
+PS C:\Users\ghartman\OneDrive - ACTS\Git\iperf3-GUI> 

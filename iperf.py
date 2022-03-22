@@ -16,12 +16,14 @@ __VERSION__ = __version__ = '1.1'
 import subprocess, sys, os, tempfile
 from platform import system as system_name  # Returns the system/OS name
 import time
-import ConfigParser
+import configparser
 import math
 import json
-import urllib2
-import Tkinter as tk
-import ttk
+import urllib
+import urllib.error
+import urllib.request
+import tkinter as tk
+from tkinter import ttk
 import meter as m
 import re
 import base64
@@ -278,7 +280,7 @@ class Mainframe(tk.Frame):
         return res is not None
         
     def write_config_file(self, file="./config.ini"):
-        Config = ConfigParser.ConfigParser()
+        Config = configparser.ConfigParser()
         Config.add_section('Servers')
         for ip_address, info in self.ip_info.items():
             self.ip_info[self.get_real_ip(ip_address)]['saved'] = True
@@ -291,7 +293,7 @@ class Mainframe(tk.Frame):
                 
     def read_config_file(self, file="./config.ini"):
         #read config file
-        Config = ConfigParser.ConfigParser()
+        Config = configparser.ConfigParser()
         try:
             Config.read(file)
             self.print('read config file')
@@ -316,11 +318,11 @@ class Mainframe(tk.Frame):
         url = 'http://checkip.dyndns.org'
         self.print('getting local ip address fron net service: %s' % url)
         try:
-            req = urllib2.urlopen(url)
-            grab = re.findall('([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)', req.read())
+            req = urllib.request.urlopen(url)
+            grab = re.findall('([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)', req.read().decode(req.headers.get_content_charset('utf8')))
             self.print('local ip is: %s' % grab[0])
             req.close()
-        except urllib2.URLError as e:
+        except urllib.error.URLError as e:
             self.print("Error: %s" % e)
         
         return grab[0]
@@ -344,7 +346,7 @@ class Mainframe(tk.Frame):
         url='https://ezcmd.com/apps/api_ezip_locator/lookup/GUEST_USER/-1/%s' % ip_address
         self.print('getting remote ip address info fron net service: %s' % url)
         try:
-            req = urllib2.urlopen(url)
+            req = urllib.request.urlopen(url)
             data = req.read()
             result = json.loads(data)
             self.ip_info[ip_address] = result
@@ -354,7 +356,7 @@ class Mainframe(tk.Frame):
             self.ip_info[ip_address]['saved'] = False
             self.print(json.dumps(result, indent=2))
             req.close()
-        except urllib2.URLError as e:
+        except urllib.error.URLError as e:
             self.print("Error: %s" % e)
         
         return result
@@ -437,10 +439,10 @@ class Mainframe(tk.Frame):
             
             self.print('getting map from google: %s' % url)
         try:
-            req = urllib2.urlopen(url)
+            req = urllib.request.urlopen(url)
             b64_data = base64.encodestring(req.read())
             req.close()
-        except urllib2.URLError as e:
+        except urllib.error.URLError as e:
             self.print("Error: %s" % e)
             return None
         return b64_data

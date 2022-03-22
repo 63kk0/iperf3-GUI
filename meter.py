@@ -1,5 +1,5 @@
-import Tkinter as tk
-import tkFont as tkf
+import tkinter as tk
+import tkinter.font as tkf
 import math, time
 
 # class to show a gauge or panel meter
